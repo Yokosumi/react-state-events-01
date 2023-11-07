@@ -1,9 +1,21 @@
 import { useState } from "react";
 import { VariableWrapper } from "./components/VariableWrapper";
 
+// const cssColors = [
+//   "red",
+//   "green",
+//   "blue",
+//   "yellow",
+//   "orange",
+//   "purple",
+//   "pink"
+// ];
+
 function App() {
   const [firstname, setFirstName] = useState("Kim");
   const [randomNumber, setRandomNumber] = useState(0);
+  const [isOnline, setIsOnline] = useState(true);
+  const [cssColors, setCssColors] = useState(["hotpink", "darkred"]);
   return (
     <>
       <h1 className="text-5xl text-red-500">Hello World</h1>
@@ -16,6 +28,15 @@ function App() {
       <VariableWrapper>
         <button onClick={() => setRandomNumber(Math.random())}>Change</button>
         <p>Random Number: {randomNumber.toFixed(2)}</p>
+      </VariableWrapper>
+      <VariableWrapper>
+        <button onClick={() => setIsOnline(!isOnline)}>Toggle</button>
+        <p> {isOnline ? "User is online" : "User is offline"}</p>
+      </VariableWrapper>
+      <VariableWrapper>
+        {cssColors.map((cssColor) => (
+          <div>{cssColor}</div>
+        ))}
       </VariableWrapper>
     </>
   );
