@@ -16,6 +16,13 @@ function App() {
   const [randomNumber, setRandomNumber] = useState(0);
   const [isOnline, setIsOnline] = useState(true);
   const [cssColors, setCssColors] = useState(["hotpink", "darkred"]);
+
+  const handleColorAdd = () => {
+    const newColor = "purple";
+    const _cssColors = structuredClone(cssColors);
+    _cssColors.push(newColor);
+    setCssColors(_cssColors);
+  };
   return (
     <>
       <h1 className="text-5xl text-red-500">Hello World</h1>
@@ -34,6 +41,7 @@ function App() {
         <p> {isOnline ? "User is online" : "User is offline"}</p>
       </VariableWrapper>
       <VariableWrapper>
+        <button onClick={() => handleColorAdd()}>Add Color</button>
         {cssColors.map((cssColor) => (
           <div>{cssColor}</div>
         ))}
