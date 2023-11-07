@@ -15,7 +15,7 @@ function App() {
 
       <VariableWrapper>
         <button onClick={() => setRandomNumber(Math.random())}>Change</button>
-        <p>Random Number: {randomNumber}</p>
+        <p>Random Number: {randomNumber.toFixed(2)}</p>
       </VariableWrapper>
     </>
   );
