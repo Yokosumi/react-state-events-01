@@ -10,7 +10,7 @@ function App() {
 
       <VariableWrapper>
         <button onClick={() => setFirstName("Robert")}>Change</button>
-        <p className="text-2xl">First name: {firstname}</p>
+        <p>First name: {firstname}</p>
       </VariableWrapper>
 
       <VariableWrapper>
